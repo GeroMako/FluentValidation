@@ -18,7 +18,7 @@ namespace Fluent_Validation.Validaciones
             RuleFor(r => r.apellido)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty()
-                .NotEqual(r => r.apellido);
+                .NotEqual(r => r.nombre);
 
             RuleFor(r => r.email)
                 .Cascade(CascadeMode.Stop)
