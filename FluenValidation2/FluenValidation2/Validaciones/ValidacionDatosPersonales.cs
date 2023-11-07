@@ -13,11 +13,13 @@ namespace Fluent_Validation.Validaciones
         public ValidacionDatosPersonales() 
         {
             RuleFor(r => r.nombre)
-                .NotEmpty().WithMessage("El nombre es obligatorio");
+                .NotEmpty().WithMessage("El nombre es obligatorio")
+                .MinimumLength(3);
 
             RuleFor(r => r.apellido)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty()
+                .MinimumLength(4);
                 .NotEqual(r => r.nombre);
 
             RuleFor(r => r.email)
